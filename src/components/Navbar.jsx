@@ -9,7 +9,7 @@ function Navbar() {
           src={appleImg}
           alt="apple"
           className="src"
-          width={14}
+          width={40}
           height={18}
         />
       </nav>
