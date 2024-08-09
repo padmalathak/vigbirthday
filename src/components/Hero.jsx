@@ -2,16 +2,33 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { heroVideo, smallHeroVideo } from "../utils";
 import { useEffect, useState } from "react";
+import Confetti from "react-confetti";
 function Hero() {
   const [videoSrc, setVideoSrc] = useState(
     window.innerWidth < 760 ? smallHeroVideo : heroVideo
   );
+
+  const [uiProps, setUIProps] = useState({
+    showConfetti: false,
+  });
 
   const handleVideoSrc = () => {
     if (window.innerWidth < 760) {
       setVideoSrc(smallHeroVideo);
     } else {
       setVideoSrc(heroVideo);
+    }
+  };
+
+  const handleBtnClick = () => {
+    if (uiProps.showConfetti) {
+      setUIProps({
+        showConfetti: false,
+      });
+    } else {
+      setUIProps({
+        showConfetti: true,
+      });
     }
   };
   useGSAP(() => {
@@ -36,6 +53,7 @@ function Hero() {
   }, []);
   return (
     <section className="w-full nav-height bg-black relaive">
+      {uiProps.showConfetti && <Confetti />}
       <div className="h-5/6 w-full flex-center flex-col">
         <p id="Hero" className="hero-title max-sm:text-base ">
           Happy Birthday Vignesh !!!
@@ -57,7 +75,7 @@ function Hero() {
         className="flex flex-col items-center opacity-0 translate-y-20"
       >
         <a href="#highlights" className="btn">
-          SEE
+          <button onClick={handleBtnClick}>Celebrate</button>
         </a>
         <p className="font-normal text-xl">
           You are the best in the whole wide world
