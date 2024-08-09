@@ -1,12 +1,12 @@
 import React from "react";
-import { appleImg, bagImg, searchImg } from "../utils";
+import { vlogoImg, bagImg, searchImg } from "../utils";
 import { navLists } from "../constants";
 
 function Navbar() {
   return (
     <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
       <nav className="w-full flex screen-max-width">
-        <img src={appleImg} alt="apple" width={40} height={18} />
+        <img src={vlogoImg} alt="V" width={40} height={18} />
         <div className="flex flex-1 justify-center max-sm:hidden">
           {navLists.map((nav, id) => {
             return (
