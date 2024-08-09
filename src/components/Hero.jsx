@@ -17,7 +17,13 @@ function Hero() {
   useGSAP(() => {
     gsap.to("#Hero", {
       opacity: 1,
-      delay: 1.5,
+      delay: 2,
+    });
+
+    gsap.to("#cta", {
+      opacity: 1,
+      delay: 2,
+      y: -50,
     });
   }, []);
 
@@ -45,6 +51,17 @@ function Hero() {
             <source src={videoSrc} type="video/mp4"></source>
           </video>
         </div>
+      </div>
+      <div
+        id="cta"
+        className="flex flex-col items-center opacity-0 translate-y-20"
+      >
+        <a href="#highlights" className="btn">
+          SEE
+        </a>
+        <p className="font-normal text-xl">
+          You are the best in the whole wide world
+        </p>
       </div>
     </section>
   );
