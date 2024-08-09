@@ -74,7 +74,7 @@ function Hero() {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20"
       >
-        <a href="#highlights" className="btn">
+        <a href="#" className="btn">
           <button onClick={handleBtnClick}>Celebrate</button>
         </a>
         <p className="font-normal text-xl">
