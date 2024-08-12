@@ -13,6 +13,11 @@ function VideoCarousel() {
                   <source src={slides.video} type="video/mp4"></source>
                 </video>
               </div>
+              <div className="absolute top-12 left-[5%]">
+                {slides.textLists.map((text, id) => (
+                  <p key={id}>{text}</p>
+                ))}
+              </div>
             </div>
           </div>
         );
