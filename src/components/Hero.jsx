@@ -56,9 +56,9 @@ function Hero() {
       {uiProps.showConfetti && <Confetti />}
       <div className="h-5/6 w-full flex-center flex-col">
         <p id="Hero" className="hero-title max-sm:text-base ">
-          Happy Birthday Vignesh !!!
+          Happy Birthday !!!
         </p>
-        <div className="md:w-10/12 w-9/12">
+        <div className="md:w-10/12 w-9/12 flex flex-center">
           <video
             className="pointer-events-none"
             autoPlay
