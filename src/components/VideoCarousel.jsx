@@ -15,7 +15,9 @@ function VideoCarousel() {
               </div>
               <div className="absolute top-12 left-[5%]">
                 {slides.textLists.map((text, id) => (
-                  <p key={id}>{text}</p>
+                  <p key={id} className="md:text-2xl text-xl font-medium">
+                    {text}
+                  </p>
                 ))}
               </div>
             </div>

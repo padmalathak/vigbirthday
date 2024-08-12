@@ -15,32 +15,28 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "Enter A17 Pro.",
-      "Game‑changing chip.",
-      "Groundbreaking performance.",
+      "Advik's Role model",
+      "Supportive Father",
+      "Advik's best friend",
     ],
     video: highlightFirstVideo,
     videoDuration: 4,
   },
   {
     id: 2,
-    textLists: ["Titanium.", "So strong. So light. So Pro."],
+    textLists: ["Bebu's Forever.", "My partner in crime", "Great listener"],
     video: highlightSecondVideo,
     videoDuration: 5,
   },
   {
     id: 3,
-    textLists: [
-      "iPhone 15 Pro Max has the",
-      "longest optical zoom in",
-      "iPhone ever. Far out.",
-    ],
+    textLists: ["CUTU BOY", "Self Confident", "Vignesh na Gethu dha"],
     video: highlightThirdVideo,
     videoDuration: 2,
   },
   {
     id: 4,
-    textLists: ["All-new Action button.", "What will yours do?."],
+    textLists: ["Respects his parents", "Independent", "Open Communicator"],
     video: highlightFourthVideo,
     videoDuration: 3.63,
   },
