@@ -8,7 +8,11 @@ function VideoCarousel() {
         return (
           <div key={slides.id} id="slider" className="sm:pr-20 pr-10">
             <div className="video-carousel_container">
-              <div className="w-full h-full bg-black overflow-hidden flex-center rounded-3xl"></div>
+              <div className="w-full h-full bg-black overflow-hidden flex-center rounded-3xl">
+                <video id="video" playsInline={true} preload="auto" muted>
+                  <source src={slides.video} type="video/mp4"></source>
+                </video>
+              </div>
             </div>
           </div>
         );
