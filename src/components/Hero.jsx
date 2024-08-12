@@ -55,6 +55,7 @@ function Hero() {
     <section className="w-full nav-height bg-black relaive">
       {uiProps.showConfetti && <Confetti />}
       <div className="h-5/6 w-full flex-center flex-col">
+        <p>I hit the husband lottery</p>
         <p id="Hero" className="hero-title max-sm:text-base ">
           Happy Birthday !!!
         </p>
