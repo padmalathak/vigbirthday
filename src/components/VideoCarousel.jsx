@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { hightlightsSlides } from "../constants";
 import { useRef } from "react";
+import gsap from "gsap";
 
 function VideoCarousel() {
   const videoRef = useRef([]);
@@ -77,7 +78,25 @@ function VideoCarousel() {
         })}
       </div>
       <div className="relative flex-center mt-10">
-        <div className="py-5 px-7 bg-gray-300 backdrop-blur rounded-full"></div>
+        <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
+          {videoRef.current.map((_, i) => (
+            <span
+              key={i}
+              ref={(el) => {
+                videoDivRef.current[i] = el;
+              }}
+              className="mx-2 w-3 h-3 relative cursor-pointer bg-gray-200 rounded-full"
+            >
+              <span
+                className="absolute h-full w-full rounded-full "
+                ref={(el) => (videoSpanRef.current[i] = el)}
+              ></span>
+            </span>
+          ))}
+        </div>
+        <button className="control-btn">
+          <img></img>
+        </button>
       </div>
     </>
   );
