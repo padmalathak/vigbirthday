@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { hightlightsSlides } from "../constants";
 import { useRef } from "react";
 import gsap from "gsap";
+import { pauseImg, playImg, replayImg } from "../utils";
 
 function VideoCarousel() {
   const videoRef = useRef([]);
@@ -38,6 +39,36 @@ function VideoCarousel() {
       });
     }
   }, [videoId, startPlay]);
+
+  const handleProcess = (type, i) => {
+    switch (type) {
+      case "video-end":
+        setVideo((prevVide) => ({ ...prevVide, isEnd: true, videoId: i + 1 }));
+        break;
+      case "video-last":
+        setVideo((prevVide) => ({ ...prevVide, isLastVideo: true }));
+        break;
+
+      case "video-reset":
+        setVideo((prevVide) => ({
+          ...prevVide,
+          isLastVideo: false,
+          videoId: 0,
+        }));
+        break;
+
+      case "play":
+        setVideo((prevVide) => ({
+          ...prevVide,
+          isPlaying: !prevVide.isPlaying,
+          videoId: 0,
+        }));
+        break;
+
+      default:
+        return video;
+    }
+  };
 
   return (
     <>
@@ -95,7 +126,17 @@ function VideoCarousel() {
           ))}
         </div>
         <button className="control-btn">
-          <img></img>
+          <img
+            src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg}
+            alt={isLastVideo ? "replay" : !isPlaying ? "Play" : "Pause"}
+            onClick={
+              isLastVideo
+                ? () => handleProcess("video-reset")
+                : !isPlaying
+                ? () => handleProcess("play")
+                : () => handleProcess("pause")
+            }
+          ></img>
         </button>
       </div>
     </>
