@@ -46,12 +46,36 @@ function VideoCarousel() {
     }
   }, [startPlay, videoId, isPlaying, loadedData]);
 
+  const handleLoadedMetaData = (i, e) => {
+    setLoadedData((pre) => [...pre, e]);
+  };
+
   useEffect(() => {
-    const currentProgress = 0;
+    let currentProgress = 0;
     let span = videoSpanRef.current;
     if (span[videoId]) {
       let anim = gsap.to(span[videoId], {
-        onUpdate: () => {},
+        onUpdate: () => {
+          const progress = Math.ceil(anim.progress) * 100;
+
+          if (progress != currentProgress) {
+            currentProgress = progress;
+
+            gsap.to(videoDivRef.current[videoId], {
+              width:
+                window.innerWidth < 760
+                  ? "10vw"
+                  : window.innerWidth < 1200
+                  ? "10vw"
+                  : "4vw",
+            });
+
+            gsap.to(span[videoId], {
+              width: `${currentProgress}%`,
+              backgroundColor: "white",
+            });
+          }
+        },
         onComplete: () => {},
       });
     }
@@ -109,6 +133,7 @@ function VideoCarousel() {
                         isPlaying: true,
                       }));
                     }}
+                    onLoadedMetadata={(e) => handleLoadedMetaData(i, e)}
                   >
                     <source src={slides.video} type="video/mp4"></source>
                   </video>
