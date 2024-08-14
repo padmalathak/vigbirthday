@@ -138,6 +138,14 @@ function VideoCarousel() {
         }));
         break;
 
+      case "pause":
+        setVideo((prevVide) => ({
+          ...prevVide,
+          isPlaying: !prevVide.isPlaying,
+          videoId: 0,
+        }));
+        break;
+
       default:
         return video;
     }
