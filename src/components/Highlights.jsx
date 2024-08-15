@@ -38,7 +38,6 @@ function Highlights() {
         </div>
         <VideoCarousel />
       </div>
-      Highlights
     </section>
   );
 }
