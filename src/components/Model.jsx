@@ -20,14 +20,17 @@ function Model() {
   //camera control for the model view
   const cameraContolSmall = useRef();
   const cameraContolLarge = useRef();
+  const cameraContolVignesh = useRef();
 
   //model
   const small = useRef(new THREE.Group());
   const large = useRef(new THREE.Group());
+  const vignesh = useRef(new THREE.Group());
 
   //rotation
   const [smallRotation, setsmallRotation] = useState(0);
   const [largeRotation, setlargeRotation] = useState(0);
+  const [vigneshRotation, setVigneshRotation] = useState(0);
 
   //title animation
   useGSAP(() => {
@@ -59,6 +62,16 @@ function Model() {
               controlRef={cameraContolLarge}
               gsapType="view1"
               setRotationState={setlargeRotation}
+              item={model}
+              size={size}
+            />
+
+            <ModelView
+              index={2}
+              groupRef={vignesh}
+              controlRef={cameraContolVignesh}
+              gsapType="view1"
+              setRotationState={setVigneshRotation}
               item={model}
               size={size}
             />
