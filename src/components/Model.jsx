@@ -7,12 +7,12 @@ import { yellowImg } from "../utils";
 import * as THREE from "three";
 import { View } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { models } from "../constants";
+import { models, sizes } from "../constants";
 
 function Model() {
   const [size, setsize] = useState("small");
   const [model, setmodel] = useState({
-    title: "Vignesh Habitats",
+    title: "Vignesh in his Natural Habitat",
     color: ["#8F8A81", "#FFE7B9"],
     img: yellowImg,
   });
@@ -91,6 +91,21 @@ function Model() {
                   ></li>
                 ))}
               </ul>
+              <button className="size-btn-container">
+                {sizes.map(({ label, value }) => (
+                  <span
+                    key={label}
+                    className="size-btn"
+                    style={{
+                      backgroundColor: size == value ? "white" : "transparent",
+                      color: size === value ? "black" : "white",
+                    }}
+                    onClick={() => setsize(value)}
+                  >
+                    {label}
+                  </span>
+                ))}
+              </button>
             </div>
           </div>
         </div>
