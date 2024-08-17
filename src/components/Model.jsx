@@ -56,7 +56,7 @@ function Model() {
               item={model}
               size={size}
             />
-            <ModelView
+            {/* <ModelView
               index={2}
               groupRef={large}
               controlRef={cameraContolLarge}
@@ -64,9 +64,9 @@ function Model() {
               setRotationState={setlargeRotation}
               item={model}
               size={size}
-            />
+            /> */}
 
-            <ModelView
+            {/* <ModelView
               index={2}
               groupRef={vignesh}
               controlRef={cameraContolVignesh}
@@ -74,7 +74,7 @@ function Model() {
               setRotationState={setVigneshRotation}
               item={model}
               size={size}
-            />
+            /> */}
 
             <Canvas
               className="w-full h-full"
