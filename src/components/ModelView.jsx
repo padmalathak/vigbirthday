@@ -11,7 +11,7 @@ function ModelView({
   groupRef,
   gsapType,
   controlRef,
-  setRotationSize,
+  setRotationState,
   size,
   item,
 }) {
